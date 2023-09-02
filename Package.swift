@@ -11,6 +11,9 @@ enum SwiftLint {
 
 let package = Package(
     name: packageName,
+    platforms: [
+        .iOS(.v13)
+    ],
     products: [
         .library(
             name: "CollectionBuilders",
