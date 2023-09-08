@@ -1,4 +1,6 @@
 [![Swift](https://github.com/Tinder/CollectionBuilders/actions/workflows/swift.yml/badge.svg?event=push)](https://github.com/Tinder/CollectionBuilders/actions/workflows/swift.yml)
+&nbsp;
+[![Bazel](https://github.com/Tinder/CollectionBuilders/actions/workflows/bazel.yml/badge.svg?event=push)](https://github.com/Tinder/CollectionBuilders/actions/workflows/bazel.yml)
 
 # Collection Builders
 
