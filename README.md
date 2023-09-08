@@ -4,6 +4,14 @@
 
 Swift result builders for `Array` and `Set`
 
+## Overview
+
+Creating or modifying arrays and sets using [result builders](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/advancedoperators#Result-Builders) allows for inline logic such as `if/else`, `switch`, `for` loops and availability checking. Also commas are not needed to separate elements. 
+
+When used with [Combine](https://developer.apple.com/documentation/combine) for example, the result builder may be used to add `AnyCancellable` instances to a `Set` without calling `store(in:)` on each instance individually.
+
+See sample code (below) for [examples of common use cases](#code-examples).
+
 ## API
 
 ### `Array`
@@ -74,28 +82,15 @@ Examples of common use cases:
 import CollectionBuilders
 import UIKit
 
-let view: UIView = .init()
-let subview: UIView = .init()
-
-view.addSubview(subview)
-
-let constraints: [NSLayoutConstraint] = .build {
-    subview
-        .widthAnchor
-        .constraint(equalToConstant: 100)
-    subview
-        .heightAnchor
-        .constraint(equalToConstant: 100)
-    subview
-        .centerXAnchor
-        .constraint(equalTo: view.centerXAnchor)
-    subview
-        .centerYAnchor
-        .constraint(equalTo: view.centerYAnchor)
-}
-
-NSLayoutConstraint.activate(constraints)
+NSLayoutConstraint.activate(Array {
+    subview.leftAnchor.constraint(equalTo: view.leftAnchor)
+    subview.rightAnchor.constraint(equalTo: view.rightAnchor)
+    subview.topAnchor.constraint(equalTo: view.topAnchor)
+    subview.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+})
 ```
+
+Alternatively written as: `NSLayoutConstraint.activate(.build { ... })`
 
 ### Example for `Set<AnyCancellable>`
 
@@ -105,19 +100,10 @@ import Combine
 
 var cancellables: Set<AnyCancellable> = []
 
-cancellables.insert {
-    Just("Hello World")
-        .sink { _ in }
-    (1...100)
-        .publisher
-        .sink { _ in }
-    Timer
-        .publish(every: 1, on: RunLoop.main, in: .common)
-        .autoconnect()
-        .sink { _ in }
-    NotificationCenter
-        .default
-        .publisher(for: UIApplication.didBecomeActiveNotification)
-        .sink { _ in }
-}
+cancellables.formUnion(Set {
+    publisherA.sink { value in }
+    publisherB.assign(to: \.keyPath, on: object)
+})
 ```
+
+Alternatively written as: `cancellables.insert { ... }`
