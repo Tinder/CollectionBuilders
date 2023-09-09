@@ -77,15 +77,12 @@ The `Array` and `Set` result builders may be used with any `Element` type.
 
 Examples of common use cases:
 
-- [`Array<NSLayoutConstraint>`](#example-for-arraynslayoutconstraint)
-- [`Set<AnyCancellable>`](#example-for-setanycancellable)
+- [`Array<NSLayoutConstraint>`](#arraynslayoutconstraint)
+- [`Set<AnyCancellable>`](#setanycancellable)
 
-### Example for `Array<NSLayoutConstraint>`
+### `Array<NSLayoutConstraint>`
 
 ```swift
-import CollectionBuilders
-import UIKit
-
 NSLayoutConstraint.activate(Array {
     subview.leftAnchor.constraint(equalTo: view.leftAnchor)
     subview.rightAnchor.constraint(equalTo: view.rightAnchor)
@@ -94,15 +91,10 @@ NSLayoutConstraint.activate(Array {
 })
 ```
 
-Alternatively written as: `NSLayoutConstraint.activate(.build { ... })`
-
-### Example for `Set<AnyCancellable>`
+### `Set<AnyCancellable>`
 
 ```swift
-import CollectionBuilders
-import Combine
-
-var cancellables: Set<AnyCancellable> = []
+var cancellables = Set<AnyCancellable>()
 
 cancellables.formUnion(Set {
     publisherA.sink { value in }
@@ -110,4 +102,13 @@ cancellables.formUnion(Set {
 })
 ```
 
-Alternatively written as: `cancellables.insert { ... }`
+OR
+
+```swift
+var cancellables = Set<AnyCancellable>()
+
+cancellables.insert {
+    publisherA.sink { value in }
+    publisherB.assign(to: \.keyPath, on: object)
+}
+```
