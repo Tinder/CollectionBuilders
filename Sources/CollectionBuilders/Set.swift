@@ -7,13 +7,14 @@ extension Set {
     @resultBuilder
     public enum Builder {
 
-        // swiftlint:disable nesting
-
+        // swiftlint:disable:next nesting
         public typealias Expression = Element
-        public typealias Component = Set<Element>
-        public typealias FinalResult = Set<Element>
 
-        // swiftlint:enable nesting
+        // swiftlint:disable:next nesting
+        public typealias Component = Set<Element>
+
+        // swiftlint:disable:next nesting
+        public typealias FinalResult = Set<Element>
 
         public static func buildExpression(_ expression: Expression?) -> Component {
             guard let expression: Expression
