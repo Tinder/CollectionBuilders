@@ -6,7 +6,7 @@
 
 # Collection Builders
 
-Swift result builders for `Array` and `Set`
+Swift Result Builders for `Array` and `Set`
 
 ## Overview
 
