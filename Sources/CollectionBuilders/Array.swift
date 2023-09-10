@@ -7,13 +7,14 @@ extension Array {
     @resultBuilder
     public enum Builder {
 
-        // swiftlint:disable nesting
-
+        // swiftlint:disable:next nesting
         public typealias Expression = Element
-        public typealias Component = [Element]
-        public typealias FinalResult = [Element]
 
-        // swiftlint:enable nesting
+        // swiftlint:disable:next nesting
+        public typealias Component = [Element]
+
+        // swiftlint:disable:next nesting
+        public typealias FinalResult = [Element]
 
         public static func buildExpression(_ expression: Expression?) -> Component {
             guard let expression: Expression
