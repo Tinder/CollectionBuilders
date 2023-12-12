@@ -16,5 +16,7 @@ jobs:
     steps:
     - name: Checkout source
       uses: actions/checkout@v3
+    - name: Expunge
+      run: bazelisk clean --expunge
     - name: Build
       run: bazelisk build //:all
