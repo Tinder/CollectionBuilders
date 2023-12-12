@@ -10,5 +10,6 @@ ios_build_test(
 swift_library(
     name = "CollectionBuilders",
     srcs = glob(["Sources/CollectionBuilders/**/*.swift"]),
+    visibility = ["//visibility:public"],
     tags = ["manual"],
 )
