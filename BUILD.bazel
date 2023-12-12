@@ -1,8 +1,14 @@
+load("@build_bazel_rules_apple//apple:ios.bzl", "ios_build_test")
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+ios_build_test(
+    name = "CollectionBuilders-iOS",
+    minimum_os_version = "13.0",
+    targets = [":CollectionBuilders"],
+)
 
 swift_library(
     name = "CollectionBuilders",
-    module_name = "CollectionBuilders",
-    srcs = glob(["Sources/CollectionBuilders/**/*.swift"], allow_empty = False),
-    visibility = ["//visibility:public"],
+    srcs = glob(["Sources/CollectionBuilders/**/*.swift"]),
+    tags = ["manual"],
 )
