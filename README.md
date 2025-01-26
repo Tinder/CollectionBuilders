@@ -61,12 +61,26 @@ func inserting(@Builder elements: () -> Self) -> Self
 
 ## Installation
 
-**Swift Package Manager Dependency**
+### Swift Package Manager
+
+**Package Dependency**
 
 > Replace `<version>` with the desired minimum version.
 
 ```swift
 .package(url: "https://github.com/Tinder/CollectionBuilders.git", from: "<version>")
+```
+
+**Target Dependency**
+
+```
+"CollectionBuilders"
+```
+
+### Swift Package Collection
+
+```swift
+https://swiftpackageindex.com/Tinder/collection.json
 ```
 
 ## Supported Types
