@@ -1,6 +1,6 @@
 [![Swift](https://github.com/Tinder/CollectionBuilders/actions/workflows/swift.yml/badge.svg?event=push)](https://github.com/Tinder/CollectionBuilders/actions/workflows/swift.yml)
 &nbsp;
-[![Bazel](https://github.com/Tinder/CollectionBuilders/actions/workflows/bazel.yml/badge.svg?event=push)](https://github.com/Tinder/CollectionBuilders/actions/workflows/bazel.yml)
+[![DocC](https://github.com/Tinder/CollectionBuilders/actions/workflows/docc.yml/badge.svg?event=push)](https://github.com/Tinder/CollectionBuilders/actions/workflows/docc.yml)
 &nbsp;
 [![Artifactory](https://github.com/Tinder/CollectionBuilders/actions/workflows/artifactory.yml/badge.svg?event=push)](https://github.com/Tinder/CollectionBuilders/actions/workflows/artifactory.yml)
 
