@@ -41,7 +41,7 @@ analyze:
 
 .PHONY: docs
 docs: target ?= CollectionBuilders
-docs: destination ?= generic/platform=macOS
+docs: destination ?= generic/platform=iOS
 docs: open ?= OPEN
 docs: DERIVED_DATA_PATH = .build/documentation/data
 docs: ARCHIVE_PATH = .build/documentation/archive
