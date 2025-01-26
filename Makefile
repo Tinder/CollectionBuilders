@@ -23,7 +23,7 @@ lint:
 
 .PHONY: analyze
 analyze: target ?= CollectionBuilders
-analyze: destination ?= generic/platform=macOS
+analyze: destination ?= generic/platform=iOS
 analyze: format ?= emoji
 analyze:
 	@DERIVED_DATA="$$(mktemp -d)"; \
