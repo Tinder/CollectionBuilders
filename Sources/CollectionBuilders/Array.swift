@@ -34,7 +34,7 @@ extension Array {
         }
 
         public static func buildBlock(_ components: Component...) -> Component {
-            components.flatMap { $0 }
+            components.flatMap(\.self)
         }
 
         public static func buildOptional(_ component: Component?) -> Component {
@@ -50,7 +50,7 @@ extension Array {
         }
 
         public static func buildArray(_ components: [Component]) -> Component {
-            components.flatMap { $0 }
+            components.flatMap(\.self)
         }
 
         public static func buildLimitedAvailability(_ component: Component) -> Component {

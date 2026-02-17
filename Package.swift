@@ -1,4 +1,4 @@
-// swift-tools-version:5.8
+// swift-tools-version:6.1
 
 import PackageDescription
 
@@ -16,10 +16,10 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/realm/SwiftLint.git",
-            exact: "0.56.2"),
+            exact: "0.59.1"),
         .package(
             url: "https://github.com/Quick/Nimble.git",
-            exact: "13.4.0"),
+            exact: "14.0.0"),
     ],
     targets: [
         .target(
