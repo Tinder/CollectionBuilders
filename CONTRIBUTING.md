@@ -1,4 +1,4 @@
-# Contributing to CollectionBuilders
+# Contributing to Collection Builders
 
 - [Open Package](#open-package)
 - [Lint Package](#lint-package)
@@ -36,7 +36,7 @@ In all of the following steps, `X.X.X` is a placeholder to be substituted with t
 
 - Enter a semantic version as the new tag (__WITHOUT__ `v` prefix)
 - Set the `main` branch as the target (it should be the default)
-- Enter the release title formatted as `CollectionBuilders vX.X.X` (__WITH__ `v` prefix)
+- Enter the release title formatted as `Collection Builders vX.X.X` (__WITH__ `v` prefix)
 - Click on `Generate release notes`
 - Leave `Set as a pre-release` unchecked
 - Leave `Set as the latest release` checked
