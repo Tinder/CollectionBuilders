@@ -30,16 +30,14 @@ let package = Package(
                 "CollectionBuilders",
                 "Nimble",
             ]),
-    ]
+    ],
+    swiftLanguageModes: [.v6],
 )
 
-package.targets.forEach { target in
-
-    target.swiftSettings = [
-        .enableExperimentalFeature("StrictConcurrency"),
-    ]
-
-    target.plugins = [
-        .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLint"),
-    ]
+if ProcessInfo.processInfo.environment["CODEQL_DIST"] == nil {
+    package.targets.forEach { target in
+        target.plugins = [
+            .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLint"),
+        ]
+    }
 }
