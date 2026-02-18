@@ -8,7 +8,7 @@ Swift Result Builders for `Array` and `Set`
 
 ## Overview
 
-Creating or modifying arrays and sets using [result builders](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/advancedoperators#Result-Builders) allows for inline logic such as `if/else`, `switch`, `for` loops and availability checking. Also commas are not needed to separate elements. 
+Creating or modifying arrays and sets using [result builders](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/advancedoperators#Result-Builders) allows for inline control statements such as `if`/`else`, `switch`, `for` loops and availability checking. Additionally, commas are not used to separate collection elements, yielding cleaner syntax than array and set literals.
 
 When used with [Combine](https://developer.apple.com/documentation/combine) for example, the result builder may be used to add `AnyCancellable` instances to a `Set` without calling `store(in:)` on each instance individually.
 
@@ -52,14 +52,21 @@ mutating func insert(@Builder elements: () -> Self)
 func inserting(@Builder elements: () -> Self) -> Self
 ```
 
-## Minimum Requirements
-
-- iOS `13.0`
-- Swift `5.8`
-
 ## Installation
 
+### Swift Package Collection
+
+<details><summary>Expand / Collapse</summary><br>
+
+```
+https://swiftpackageindex.com/Tinder/collection.json
+```
+
+</details>
+
 ### Swift Package Manager
+
+<details><summary>Expand / Collapse</summary><br>
 
 **Package Dependency**
 
@@ -71,15 +78,29 @@ func inserting(@Builder elements: () -> Self) -> Self
 
 **Target Dependency**
 
-```
+```swift
 "CollectionBuilders"
 ```
 
-### Swift Package Collection
+</details>
 
-```swift
-https://swiftpackageindex.com/Tinder/collection.json
+### Xcode
+
+<details><summary>Expand / Collapse</summary><br>
+
+**Package Dependency**
+
 ```
+https://github.com/Tinder/CollectionBuilders.git
+```
+
+**Target Dependency**
+
+```
+CollectionBuilders
+```
+
+</details>
 
 ## Supported Types
 
