@@ -1,7 +1,9 @@
-// swift-tools-version:6.1
+// swift-tools-version:5.10
 
 import Foundation
 import PackageDescription
+
+let enableSwiftLintBuildToolPlugin = ProcessInfo.processInfo.environment["CODEQL_DIST"] == nil
 
 let package = Package(
     name: "CollectionBuilders",
@@ -32,11 +34,15 @@ let package = Package(
                 "Nimble",
             ]),
     ],
-    swiftLanguageModes: [.v6],
 )
 
-if ProcessInfo.processInfo.environment["CODEQL_DIST"] == nil {
-    package.targets.forEach { target in
+package.targets.forEach { target in
+
+    target.swiftSettings = [
+        .enableExperimentalFeature("StrictConcurrency"),
+    ]
+
+    if enableSwiftLintBuildToolPlugin {
         target.plugins = [
             .plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLint"),
         ]
