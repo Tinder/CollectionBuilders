@@ -1,5 +1,6 @@
 // swift-tools-version:6.1
 
+import Foundation
 import PackageDescription
 
 let package = Package(
