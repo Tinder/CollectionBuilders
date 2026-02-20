@@ -36,7 +36,7 @@ let package = Package(
                 "CollectionBuilders",
                 "Nimble",
             ]),
-    ],
+    ]
 )
 
 package.targets.forEach { target in
