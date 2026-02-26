@@ -34,7 +34,12 @@ extension Array {
         }
 
         public static func buildBlock(_ components: Component...) -> Component {
+            #if swift(>=6.0)
             components.flatMap(\.self)
+            #else
+            // swiftlint:disable:next prefer_key_path
+            components.flatMap { $0 }
+            #endif
         }
 
         public static func buildOptional(_ component: Component?) -> Component {
@@ -50,7 +55,12 @@ extension Array {
         }
 
         public static func buildArray(_ components: [Component]) -> Component {
+            #if swift(>=6.0)
             components.flatMap(\.self)
+            #else
+            // swiftlint:disable:next prefer_key_path
+            components.flatMap { $0 }
+            #endif
         }
 
         public static func buildLimitedAvailability(_ component: Component) -> Component {
