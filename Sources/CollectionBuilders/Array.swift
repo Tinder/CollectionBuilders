@@ -34,7 +34,7 @@ extension Array {
         }
 
         public static func buildBlock(_ components: Component...) -> Component {
-            #if swift(>=5.2)
+            #if swift(>=6.0)
             components.flatMap(\.self)
             #else
             // swiftlint:disable:next prefer_key_path
@@ -55,7 +55,7 @@ extension Array {
         }
 
         public static func buildArray(_ components: [Component]) -> Component {
-            #if swift(>=5.2)
+            #if swift(>=6.0)
             components.flatMap(\.self)
             #else
             // swiftlint:disable:next prefer_key_path
